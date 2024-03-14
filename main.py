@@ -29,7 +29,7 @@ async def get_data_by_article(product_article: int) -> (tuple[str, int, int, flo
 			result_status = result.status
 			if result_status == 200:
 				result = await result.json()
-				result = result['data']['products'][0] # тут есть уязвимость на артикул 000000000000000000000000
+				result = result['data']['products'][0]
 				product_name = result['name']
 				product_article = result['id']
 				product_price = result['salePriceU']
